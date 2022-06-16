@@ -222,7 +222,7 @@
       <div class="mdc-tab-scroller">
         <div class="mdc-tab-scroller__scroll-area">
           <div class="mdc-tab-scroller__scroll-content">
-            <button class="mdc-tab mdc-tab--active meme-tab" role="tab" aria-selected="true" tabindex="0">
+            <button class="mdc-tab mdc-tab--active meme-tab top-bar" role="tab" aria-selected="true" tabindex="0">
               <span class="mdc-tab__content">
                 <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
                 <span class="mdc-tab__text-label">Memes</span>
@@ -232,7 +232,8 @@
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
-            <button class="mdc-tab mdc-tab--active fail-tab" role="tab" aria-selected="true" tabindex="0">
+
+            <button class="mdc-tab mdc-tab--active fail-tab top-bar" role="tab" aria-selected="true" tabindex="0">
               <span class="mdc-tab__content">
                 <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
                 <span class="mdc-tab__text-label">Fails</span>
@@ -242,7 +243,8 @@
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
-            <button class="mdc-tab mdc-tab--active tweet-tab" role="tab" aria-selected="true" tabindex="0">
+
+            <button class="mdc-tab mdc-tab--active tweet-tab top-bar" role="tab" aria-selected="true" tabindex="0">
               <span class="mdc-tab__content">
                 <!-- <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span> -->
                 <span class="mdc-tab__text-label">Tweets</span>
@@ -461,7 +463,7 @@
       history.pushState(null, null, window.location.pathname);
     }
 
-    document.querySelectorAll('.mdc-tab').forEach(tab => {
+    document.querySelectorAll('.top-bar').forEach(tab => {
       tab.addEventListener('click', function () {
         let tabName = this.innerText.toLowerCase();
         console.log(tabName);
