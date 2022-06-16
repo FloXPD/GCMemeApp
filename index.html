@@ -260,28 +260,28 @@
     </div>
 
     <ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list">
-      <li class="mdc-image-list__item memes">
-        <img class="mdc-image-list__image" src="memes/h848FF8E6.png">
+      <li class="mdc-image-list__item memes" id="1">
+        <img class="mdc-image-list__image" src="memes/h848FF8E6.png"id="image1">
         <div class="mdc-image-list__supporting">
         </div>
       </li>
-      <li class="mdc-image-list__item fails">
-        <img class="mdc-image-list__image" src="memes/h8389AD5D.png">
+      <li class="mdc-image-list__item fails" id="2">
+        <img class="mdc-image-list__image" src="memes/h8389AD5D.png"id="image2">
         <div class="mdc-image-list__supporting">
         </div>
       </li>
-      <li class="mdc-image-list__item tweets">
-        <img class="mdc-image-list__image" src="memes/h827DE32C.png">
+      <li class="mdc-image-list__item tweets" id="3">
+        <img class="mdc-image-list__image" src="memes/h827DE32C.png"id="image3">
         <div class="mdc-image-list__supporting">
         </div>
       </li>
-      <li class="mdc-image-list__item memes">
-        <img class="mdc-image-list__image" src="memes/hE51B7EEE.png">
+      <li class="mdc-image-list__item memes" id="4">
+        <img class="mdc-image-list__image" src="memes/hE51B7EEE.png"id="image4">
         <div class="mdc-image-list__supporting">
         </div>
       </li>
-      <li class="mdc-image-list__item fails">
-        <img class="mdc-image-list__image" src="memes/hE9EFABC7.png">
+      <li class="mdc-image-list__item fails" id="5">
+        <img class="mdc-image-list__image" src="memes/hE9EFABC7.png"id="image5">
         <div class="mdc-image-list__supporting">
         </div>
       </li>
@@ -406,7 +406,9 @@
     let imageListItems = document.querySelectorAll('.mdc-image-list__item');
     imageListItems.forEach((imageListItem) => {
       imageListItem.addEventListener('click', function () {
-        openSheet('sheet-meme')
+        let imageID = document.getElementById('image'+imageListItem.id).src
+        document.getElementById('sheet-image').src = imageID;
+        openSheet('sheet-meme');
       })
 
     });
@@ -427,6 +429,8 @@
       setTimeout(function () {
         sheet.classList.remove('sheet-out-of-view');
       }, 10);
+
+      //voeg de aangeklikte image toe aan de sheet
 
       //als de homepage heel lang zou zijn kan je onder de sheet door scrollen, dat willen we als de sheet open is voorkomen (wel pas na animatie)
       setTimeout(function () {
