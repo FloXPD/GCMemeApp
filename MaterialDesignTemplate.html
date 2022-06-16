@@ -393,8 +393,9 @@
 
     listEl.addEventListener('click', (event) => {
       drawer.open = false;
-      const title = event.target.innerText;
-      document.querySelector('.mdc-top-app-bar__title').innerText = title;
+      // const title = event.target.innerText.split(' ')[0];
+      // console.log(title)
+      // document.querySelector('.mdc-top-app-bar__title').innerText = title;
     });
 
     const topAppBarMeme = new MDCTopAppBar(document.querySelector('.mdc-top-app-bar-meme'));
@@ -463,6 +464,7 @@
     document.querySelectorAll('.mdc-tab').forEach(tab => {
       tab.addEventListener('click', function () {
         let tabName = this.innerText.toLowerCase();
+        console.log(tabName);
         document.querySelectorAll('.mdc-image-list__item').forEach(function (item) {
           item.classList.add('hidden');
         });
@@ -470,6 +472,14 @@
           item.classList.remove('hidden');
         });
       })
+    });
+
+    listEl.addEventListener('click', (event) => {
+      const titleRaw = event.target.innerText;
+      const title = titleRaw.split(' ')[0];
+      document.querySelectorAll('.mdc-image-list__item').forEach(function (item) {
+          item.classList.remove('hidden');
+        });
     });
 
 
